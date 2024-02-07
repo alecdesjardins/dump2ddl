@@ -1,0 +1,65 @@
+carrier_integration: schema
+    --  Tables responsible for carrier integration
+    + tables
+        mcp_carrier: table
+            + columns
+                id: integer NN default nextval('carrier_integration.mcp_carrier_id_seq'::regclass)
+                    . references
+                        sequence = mcp_carrier_id_seq
+                dot_number: integer
+                legal_name: text
+                dba_name: text
+                address1: text
+                address2: text
+                city: text
+                zip_code: text
+                state: text
+                country: text
+                cell_phone: text
+                phone: text
+                fax: text
+                free_phone: text
+                emergency_phone: text
+                email: text
+                fraud_identity_theft_status: text
+                mc_number: text
+                scac: text
+                mailing_address1: text
+                mailing_address2: text
+                mailing_city: text
+                mailing_state: text
+                mailing_zipcode: text
+                mailing_country: text
+                after_hrs_wkday_support_name: text
+                after_hrs_wkday_support_phone: text
+                after_hrs_wkday_support_fax: text
+                after_hrs_wkday_support_from: time
+                after_hrs_wkday_support_to: time
+                after_hrs_wkend_support_name: text
+                after_hrs_wkend_support_phone: text
+                after_hrs_wkend_support_fax: text
+                after_hrs_wkend_support_from: time
+                after_hrs_wkend_support_to: time
+                website: text
+                operation_manager_name: text
+                online_access_to_available_loads: boolean
+                available_loads_email: text
+                driver_logs_safety_dept_manager_name: text
+                driver_logs_safety_dept_manager_phone: text
+                dispatchers: text
+                claims_contact_name: text
+                claims_contact_phone: text
+                claims_contact_email: text
+                dispatch_service_used: boolean
+                dispatch_service_name: text
+                dispatch_service_phone: text
+                broker_out_extra_freight: boolean
+                created_datetime: timestamp
+                modified_datetime: timestamp
+                owner_contact_name: text
+                owner_contact_phone: text
+                owner_contact_email: text
+            + indices
+                #1: unique (id)
+            + keys
+                #1: PK (id) (underlying index #1)
