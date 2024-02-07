@@ -1,6 +1,7 @@
 import re
 
 
+# Parse Provided Database Model Dump and Generate DDL
 def parse_and_generate_ddl(file_path):
     def create_schema_statement(schema_name_f):
         return f"CREATE SCHEMA IF NOT EXISTS {schema_name_f};\n"
